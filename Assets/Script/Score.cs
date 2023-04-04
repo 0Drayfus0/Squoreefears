@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public int fears;
-    public int score;
+   int count = 0;
+   void OnCollisionEnter(Collision collision)
+   {
 
 
-    public void AddFear()
-    {
-        fears++;
-    }
+      if (collision.collider.CompareTag("Fears"))
+      {
+         count++;
+         Destroy(collision.gameObject);
+         Debug.Log("Fears: ");
+      }
 
-
-    public void AddScore()
-    {
-        score++;
-    }
-
-
-   
-    
+   }
 }
