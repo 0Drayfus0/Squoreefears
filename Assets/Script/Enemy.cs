@@ -5,15 +5,24 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Score score;
+    public Sound sound;
+
 
    
     private void Start()
     {
         score = FindObjectOfType<Score>();
+       
     }
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
+    {    
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            sound.PlayWinClip();
+            score.AddFear();
+        }
+        
     }
 
 }

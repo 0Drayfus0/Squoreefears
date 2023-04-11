@@ -1,20 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-   int count = 0;
-   void OnCollisionEnter(Collision collision)
+   int fear;
+   public Text text;
+   
+   public void AddFear()
    {
-
-
-      if (collision.collider.CompareTag("Fears"))
-      {
-         count++;
-         Destroy(collision.gameObject);
-         Debug.Log("Fears: ");
-      }
-
+        fear++;
+        text.text = "Fears: " + fear;
    }
+
 }

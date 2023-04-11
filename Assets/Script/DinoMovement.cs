@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DinoMovement : MonoBehaviour
 {
+    public float jumpOnes;
     public float jumpAmount = 20;
     public float speed = 10f;
     Rigidbody2D rb;
@@ -41,4 +42,9 @@ public class DinoMovement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
         }
     }
+    public void JumpOne()
+    {
+
+    }
+    
 }
